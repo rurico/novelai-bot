@@ -401,6 +401,7 @@ export function apply(ctx: Context, config: Config) {
       if (!base64.trim()) return session.text('.empty-response')
 
       function getContent() {
+        return session.send(segment.at(session.userId) + segment.image('base64://' + base64), seed = ${seed})
         if (config.output === 'minimal') return segment.image('base64://' + base64)
         const attrs = {
           userId: session.userId,
